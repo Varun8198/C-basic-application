@@ -17,11 +17,11 @@ namespace Contacts_BDAT1001.Data
                 // dotnet user-secrets set SeedUserPW <pw>
                 // The admin user can do anything
 
-                var adminID = await EnsureUser(serviceProvider, testUserPw, "admin@contoso.com");
+                var adminID = await EnsureUser(serviceProvider, testUserPw, "admin-bdat1001@georgiancollege.ca");
                 await EnsureRole(serviceProvider, adminID, Constants.ContactAdministratorsRole);
 
                 // allowed user can create and edit contacts that they create
-                var managerID = await EnsureUser(serviceProvider, testUserPw, "manager@contoso.com");
+                var managerID = await EnsureUser(serviceProvider, testUserPw, "manager-bdat1001@georgiancollege.ca");
                 await EnsureRole(serviceProvider, managerID, Constants.ContactManagersRole);
 
                 SeedDB(context, adminID);
